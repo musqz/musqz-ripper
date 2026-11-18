@@ -2,6 +2,8 @@
 
 Noctalia panel that turns a video, or a folder of videos, into AVIF frames: frames per second, skip intro and outro, drop all-white and all-black frames.
 
+![Ripper panel](docs/ripper.png)
+
 ## Dependencies
 
 `ffmpeg` (with libaom), `yad`, `libnotify`
