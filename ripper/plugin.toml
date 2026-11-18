@@ -1,0 +1,20 @@
+id = "musqz/ripper"
+name = "Ripper"
+version = "0.1.0"
+plugin_api = 43
+author = "musqz"
+license = "MIT"
+icon = "movie"
+description = "Video to AVIF frames: pick a clip or a folder, set frames per second, skip intro and outro, drop all-white and all-black frames."
+tags = ["utility", "media"]
+dependencies = ["ffmpeg", "yad", "libnotify"]
+
+[[panel]]
+id = "main"
+entry = "panel.luau"
+width = 700
+height = "content"
+max_height = 900
+placement = "floating"
+position = "top_center"
+keyboard_focus = "on_demand"
