@@ -85,7 +85,7 @@ local function check()
     if now ~= running then
       running = now
       if running then
-        done = done or "Running: a notification follows when it is finished"
+        done = done or "Running. A season can take hours: close the panel if you like, a notification follows when it is done"
       else
         readProgress()
         done = outDir and "Finished" or "Failed, see the notification"
@@ -176,7 +176,7 @@ local function run()
   phase = nil
   runStart = os.time()
   running = true
-  done = "Running: a notification follows when it is finished"
+  done = "Running. A season can take hours: close the panel if you like, a notification follows when it is done"
   render()
 end
 
@@ -218,7 +218,7 @@ function render()
         ui.label({ text = prog.count .. " of " .. prog.total .. " frames" .. (prog.left and ("  -  about " .. eta(prog.left) .. " left") or ""), color = "on_surface_variant", fontSize = 11 }),
       })
     else
-      status = ui.label({ key = "prog", text = "Starting", color = "on_surface_variant", fontSize = 11 })
+      status = ui.label({ key = "prog", text = "Reading the videos, the first numbers follow in a moment", color = "on_surface_variant", fontSize = 11 })
     end
   end
 
@@ -290,7 +290,7 @@ function render()
       end }) or ui.box({ height = 0 }),
     }),
     status or ui.box({ height = 0 }),
-    err and ui.label({ text = err, color = "error" }) or done and ui.label({ text = done .. (outDir and (" in " .. outDir) or ""), color = "primary", maxLines = 2 }) or ui.box({ height = 0 }),
+    err and ui.label({ text = err, color = "error" }) or done and ui.label({ text = done .. (outDir and (" in " .. outDir) or ""), color = "primary", maxLines = 3 }) or ui.box({ height = 0 }),
   }))
 end
 
